@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function mynum()
+    {
+       let x=document.getElementById("fnm").value;
+       let y=document.getElementById("lnm").value;
+
+       alert("form is submitted");
+
+       document.getElementById("ans").innerHTML="Full Name Is "+x+" "+y;
+               document.getElementById("ans").style.color="Green";
+
+   
+
+
+
+    }
+</script>
+<body>
+    <div style="text-align: center; margin: 100px;">
+
+        <h4>Submit the form instead using of button</h4>
+       
+
+             First name: <input type="text" id="fnm"><br><br>
+             Last Name: <input type="text" id="lnm"><br><br>
+            <button style="color: black; background-color: skyblue;" onclick="mynum()">Submit</button>
+            <p id="ans"></p>
+
+
+       
+        
+
+    </div>
+</body>
+</html>
