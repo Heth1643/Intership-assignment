@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            padding-left: 5px;
+        }
+    </style>
+    <script>
+        function myradio() {
+            let x = document.getElementsByName("r");
+
+            for (i = 0; i < x.length; i++) {
+                if (x[i].checked)
+                    document.getElementById("span").innerHTML
+                        = "You have selected : " + x[i].value;
+                document.getElementById("span").style.color = "green";
+            }
+  }
+    </script>
+</head>
+
+<body>
+    <div style="text-align:center; margin: 100px;">
+        <label>Please select your technology :</label>
+        <label for="php">Php</label><input type="radio" name="r" id="php" value="php" onclick="myradio()">
+        <label for="Asp.net">Asp.net</label><input type="radio" name="r" value="Asp.net" id="Asp.net" onclick="myradio()">
+        <label for="Asp">Asp</label><input type="radio" name="r" value="Asp" id="Asp" onclick="myradio()">
+       
+        <label for="Jsp">Jsp</label><input type="radio" name="r" value="Jsp" id="Jsp" onclick="myradio()">
+        <label for="Perl">perl</label><input type="radio" name="r" value="Perl" id="Perl" onclick="myradio()">
+        <label for="cold">Cold Fusion</label><input type="radio" name="r" value="Cold Fusion" id="cold" onclick="myradio()">
+        <label for="other">other</label><input type="radio" value="Other" name="r" id="other" onclick="myradio()"><br><br>
+        
+        <span id="span"></span>
+    </div>
+
+</body>
+
+</html>
