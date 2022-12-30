@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            padding-left: 5px;
+        }
+        span{
+            display: none;
+        }
+    </style>
+    <script>
+        function myradio() {
+            let x = document.getElementsByName("r");
+
+            for (i = 0; i < x.length; i++) {
+
+                if (x[i].checked) {
+                    document.getElementById(x[i].value + "1").style.display= "block";
+                    document.getElementById(x[i].value + "1").style.color = "green";
+                }else{
+                    document.getElementById(x[i].value + "1").style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div style="text-align:center; margin: 100px;">
+        <label>Please select your technology :</label>
+        <label for="php">Php</label><input type="radio" name="r" id="php" value="php" onclick="myradio()">
+        <label for="Asp.net">Asp.net</label><input type="radio" name="r" value="Asp.net" id="Asp.net"
+            onclick="myradio()">
+        <label for="Asp">Asp</label><input type="radio" name="r" value="Asp" id="Asp" onclick="myradio()">
+        <label for="Jsp">Jsp</label><input type="radio" name="r" value="Jsp" id="Jsp" onclick="myradio()">
+        <label for="Perl">perl</label><input type="radio" name="r" value="Perl" id="Perl" onclick="myradio()">
+        <label for="cold">Cold Fusion</label><input type="radio" name="r" value="Cold Fusion" id="cold"
+            onclick="myradio()">
+        <label for="other">other</label><input type="radio" value="Other" name="r" id="other"
+            onclick="myradio()"><br><br>
+            <span id="php1"> You Have select :php</span>
+            <span id="Asp.net1"> You Have select :Asp.net</span>
+            <span id="Asp1"> You Have select :Asp</span>
+            <span id="Jsp1"> You Have select :Jsp</span>
+            <span id="Perl1"> You Have select :Perl</span>
+            <span id="Cold Fusion1"> You Have select :Cold Fusion</span>
+            <span id="Other1"> You Have select :Other</span>
+
+    </div>
+
+</body>
+
+</html>
