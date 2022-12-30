@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-10</title>
+</head>
+<style>
+    div{
+        text-align: center;
+        margin: 100px;
+    }
+</style>
+<body>
+    <div>
+        <p>Please click here in order to read our Terms and Conditions</p><input type="button" onclick="read()" value="Read">
+    </div>
+
+    <script>
+            function read()
+            {
+           var mywindow= window.open("popup2.html"," ","width=400,height=200,location=no,resizable=no,toolbar=no");
+           mywindow.moveTo(100, 100);
+
+            }
+
+ 
+    </script>
+</body>
+</html>
+
+/** popup 2 **/
+  <script>
+      function off()
+      {
+        var mywindow= window.close();
+
+      }
+    
+    
+    </script>
+    <div>
+        <p>Welcome and please agree with our Terms and Conditions</p><input type="button" onclick="off()" value="Close">
+    </div>
