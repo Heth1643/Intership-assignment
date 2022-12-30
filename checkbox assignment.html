@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>As-7</title>
+    <style>
+        div {
+            margin-top: 10px;
+
+        }
+    </style>
+    <script>
+        function mycheck(ele) {
+            if (ele.checked) {
+                let y = document.getElementsByName("ch");
+                var isAllChecked =  true
+                for (i = 0; i < y.length; i++) {
+                    if(!y[i].checked){
+                        isAllChecked = false;
+                    }
+                }
+                document.getElementById("checkall").checked = isAllChecked;
+            }
+            else {
+                let y = document.getElementById("checkall");
+                 y.checked = false;
+            }
+        }
+
+        function mycheckall() {
+            let y = document.getElementById("checkall");
+            if (y.checked) {
+                let x = document.getElementsByName("ch");
+                for (i = 0; i < x.length; i++) {
+                    x[i].checked = true;
+                }
+            }
+            else {
+                let x = document.getElementsByName("ch");
+                for (i = 0; i < x.length; i++) {
+                    x[i].checked = false;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" name="ch1" id="checkall" onchange="mycheckall()"> <label for="checkall">Check
+            All</label><br>
+        <input type="checkbox" name="ch" id="usa" onchange="mycheck(this)"> <label for="usa">Usa</label><br>
+        <input type="checkbox" name="ch" id="Uk" onchange="mycheck(this)"> <label for="Uk">Uk</label><br>
+        <input type="checkbox" name="ch" id="india" onchange="mycheck(this)"> <label for="india">India</label><br>
+        <input type="checkbox" name="ch" id="Asia" onchange="mycheck(this)"><label for="Asia">Asia Pacific</label><br>
+        <input type="checkbox" name="ch" id="Aus" onchange="mycheck(this)"><label for="Aus">Australia</label><br>
+        <input type="checkbox" name="ch" id="middle" onchange="mycheck(this)"> <label for="middle">Middle East</label><br>
+
+
+    </div>
+
+</body>
+
+</html>
