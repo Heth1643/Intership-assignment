@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown-list</title>
+    <style>
+        div{
+                text-align: center;
+                margin: 75px;
+   
+
+
+        }
+        select{
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label>Select Country: </label>
+        <select id="con" onchange="select1()">
+            <option  selected name="select" value="pleaseselect">Please Select</option>
+             <option value="India"  name="select">India</option>
+            <option value="Uk"  name="select">Uk</option>
+            <option value="Usa"  name="select">Usa</option>
+            <option value="canada"  name="select">Canada</option>
+            <option value="Russia"  name="select">Russia</option>
+        </select><br><br>
+       <p> Your Selected Country :</p>  <p id="default"> India , Uk , Usa , Canada , Russia</p> <p id="ans" style="font-weight: bold;"></p>
+
+
+    </div>
+
+    <script>
+       const select1=()=>
+         {
+            const x= document.getElementById("con");
+            if(x.value=='pleaseselect'){
+                document.getElementById("default").style.display = "block";
+                document.getElementById("ans").style.display = "none";
+            }else{
+                document.getElementById("default").style.display="none";
+                document.getElementById("ans").style.display = "block";
+                document.getElementById("ans").innerHTML = x.value;
+            }
+         }
+    </script>
+</body>
+</html>
