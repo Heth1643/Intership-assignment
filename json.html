@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p id="demo"></p><br>
+        <hr>
+        <p id="p" style="color:red;"></p>
+    </div>
+    <script>
+        // we can use json parse() method to converting js string to js object
+        let jx = '{"name":"hetul","age":21,"married":false,"dob":"2001-07-21","myfun":"function(){return 30;}"}';
+
+        let jxx = '["hitesh",20,"thakor"]'
+
+        let json = JSON.parse(jx);
+        let njson = JSON.parse(jxx);
+
+        json.myfun = eval("(" + json.myfun + ")");
+
+        json.dob = new Date(json.dob);// we pass date into string if wish to show date but after we convert to date object
+
+        document.getElementById("demo").innerHTML = " my name is " + json.name + " and my age :" + json.age + " my array " + njson[0] + " dob " + json.dob + " " + json.myfun();
+
+        /*** JSON stringfly ****/
+
+        let obj={ // we create simple object and it after convert to string by using stringify
+
+           fname:"hitesh",
+           lname:"thakor",
+           age:21,
+           msg:()=>{
+            
+             return "hello";
+
+           },
+           single:true,
+
+
+        }
+        const myarr=["hitesh21",21,false]; 
+
+        let str=JSON.stringify(obj);  
+
+        let str2=JSON.stringify(myarr); // its convert to string
+
+      //  document.getElementById("p").innerHTML=str;
+
+ /** storing and retriving json object */
+
+
+ localStorage.setItem("myfile",str);
+
+ // retrive
+
+ let txt=localStorage.getItem("myfile");
+ let ret = JSON.parse(txt);
+
+ 
+ document.getElementById("p").innerHTML=ret.fname;
+ 
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
