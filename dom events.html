@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        *{
+            padding: 5px;
+            margin: 10px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div style="text-align: center; margin: 100px;" id="main" onmouseenter="enter(this)" onmouseleave="leave(this)">
+        <button type="button" onclick="myclick(this)">Click</button>
+        <p id="demo">this is click Events</p><br>
+        <h1 onclick="this.innerHTML='using innerhtml property with onclick events'" ondblclick="ondbl(this)" id="h1">
+            Using onclick into h1 tag </h1>
+        <div style="display:block;" onmouseover="over(this)" id="d1" onmouseout="out(this)">
+            onmouseover and onmouseout events...lets see example</div><br>
+
+            <input type="text" id="txt" onchange="toupper()"><br><br>
+
+            <input type="button" id="con" value="Confirm" onclick="con()"><br>
+            <br><p id="pcon"></p>
+      
+            
+            <div id="my" onclick="rem(this)">Remove by click me</div>
+          
+    </div>
+    
+    <script>
+
+        myclick = () => {
+
+            document.getElementById("demo").innerText = "Opps";
+
+
+        }
+        enter = () => {
+
+            document.getElementById("demo").innerText = "Onmouse enter is now live";
+            document.getElementById("main").style.backgroundColor = "red";
+        }
+
+        leave = () => {
+
+
+            document.getElementById("main").style.backgroundColor = "green";
+
+
+
+        }
+
+        over = () => {
+
+            document.getElementById("d1").innerText = "Onmouseover events works";
+            document.getElementById("d1").style.backgroundColor = "skyblue";
+
+
+
+        }
+        out = () => {
+
+            document.getElementById("d1").innerText = "OnMouseout  events works";
+            document.getElementById("d1").style.backgroundColor = "yellow";
+
+
+
+        }
+        ondbl = () => {
+
+            document.getElementById("h1").innerText = "On double click  events works";
+            document.getElementById("h1").style.backgroundColor = "yellow";
+
+
+
+        }
+          toupper=()=>
+          {
+             var x=document.getElementById("txt")
+              x.value=x.value.toUpperCase();
+
+
+          }
+
+       /* document.getElementById("btn").addEventListener("click",Display);
+
+        Display=()=>{
+         
+            document.getElementById("disp").innerHTML=Date();
+
+        }*/
+  
+         const pare=document.createElement("p");
+         const node=document.createTextNode("Using javascript");
+         pare.appendChild(node);
+
+        const element=document.getElementById("my");
+        element.appendChild(pare);
+      
+
+        rem=()=>{
+
+          document.getElementById("my").remove();
+
+        }
+
+        con=()=>
+        {
+           var txt;
+           if(
+            confirm("presss abutton")
+            )
+           {
+
+            txt="you press ok!";
+           }
+           else{
+
+               txt="not confirm";
+           }
+   
+            document.getElementById("pcon").innerHTML=txt;
+        }
+</script>
+
+</body>
+
+</html>
