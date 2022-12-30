@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSIGNMENT-13</title>
+    <style>
+        div{
+            text-align:left;
+            margin: 15px;
+           
+            
+        }
+        a{
+             display: block;
+             border-radius: 20px;
+             border: 2px solid;
+              text-align: center;
+              width: 110px;
+              
+              
+
+        }
+    </style>
+</head>
+<body>
+    <a id="a" onclick="link()"><label>Add Contact</label></a>
+    
+    <div id="main">
+      
+    </div>
+
+    <script>
+        function link()
+        {
+            const para=document.createElement("input");
+            const para2=document.createElement("button");
+            
+            const node=document.createTextNode("text");
+            const node2=document.createTextNode("x");
+            
+            para.appendChild(node);
+            para2.appendChild(node2);
+            
+
+            const xx=document.getElementById("main");
+            xx.appendChild(para);
+            xx.appendChild(para2);
+
+        
+         para2.addEventListener("click",can);
+
+    function can()
+    {
+
+       para.remove();
+       para2.remove();
+
+    }
+
+        }
+    </script>
+</body>
+</html>
